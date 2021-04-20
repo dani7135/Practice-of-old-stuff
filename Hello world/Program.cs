@@ -53,17 +53,17 @@ namespace Hello_world
             while (adding)
             {
                 var newStudent = new Student();
-                Console.WriteLine("Name: ");
-                newStudent.Name= Console.ReadLine();
+                newStudent.Name = Question.Ask("Name: ");
 
-                Console.WriteLine("Grade: ");
-                newStudent.Grade = int.Parse( Console.ReadLine());
+                newStudent.Grade = int.Parse(Question.Ask("Grade: "));
 
-                Console.WriteLine("Phone: ");
-                newStudent.Phone =int.Parse(Console.ReadLine());
+                
+                newStudent.Phone = int.Parse(Question.Ask("Phonenr: "));
 
                 students.Add(newStudent);
-
+                Student.Count++;
+                Console.WriteLine(Student.Count);
+               
                 Console.WriteLine("y/n?");
                 if (Console.ReadLine() != "y")
                 {
@@ -72,12 +72,13 @@ namespace Hello_world
             }
             foreach (var student in students)
             {
-                Console.WriteLine(student.Name + " "+ student.Grade );
+                Console.WriteLine(student.Name + " "+ student.Grade  );
             }
         }
     }
     class Student
     {
+        static public int Count = 0;
         public string Name;
         public int Grade;
         private int phone;
@@ -86,13 +87,8 @@ namespace Hello_world
         {
             set { phone = value; Console.WriteLine(phone); } 
         }
-        public int MyProperty { get; set; }
-        
-        public void SetPhone(int number)
-        {
-           phone = number;
-             
-        }
+
+   
     }
 }
 
