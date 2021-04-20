@@ -48,25 +48,31 @@ namespace Hello_world
           }*/
         static void Main(string[] args)
         {
-            var student = new List<Student>();
+            var students = new List<Student>();
             var adding = true;
             while (adding)
             {
-                Console.WriteLine("Name: ");
                 var newStudent = new Student();
+                Console.WriteLine("Name: ");
                 newStudent.Name= Console.ReadLine();
+
                 Console.WriteLine("Grade: ");
                 newStudent.Grade = int.Parse( Console.ReadLine());
-                student.Add(newStudent);
+
+                Console.WriteLine("Phone: ");
+                newStudent.Phone =int.Parse(Console.ReadLine());
+
+                students.Add(newStudent);
+
                 Console.WriteLine("y/n?");
                 if (Console.ReadLine() != "y")
                 {
                     adding = false;
                 }
             }
-            foreach (var item in student)
+            foreach (var student in students)
             {
-                Console.WriteLine(item.Name+ item.Grade);
+                Console.WriteLine(student.Name + " "+ student.Grade );
             }
         }
     }
@@ -74,6 +80,19 @@ namespace Hello_world
     {
         public string Name;
         public int Grade;
+        private int phone;
+
+        public int Phone
+        {
+            set { phone = value; Console.WriteLine(phone); } 
+        }
+        public int MyProperty { get; set; }
+        
+        public void SetPhone(int number)
+        {
+           phone = number;
+             
+        }
     }
 }
 
