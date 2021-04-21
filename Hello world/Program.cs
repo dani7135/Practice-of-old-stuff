@@ -24,7 +24,7 @@ namespace Hello_world
                 Console.WriteLine(Student.Count);
                
                 Console.WriteLine("y/n?");
-                if (Console.ReadLine() != "y")
+                if (Console.ReadLine() != "y") 
                 {
                     adding = false;
                 }
