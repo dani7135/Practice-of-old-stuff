@@ -22,7 +22,7 @@ namespace Hello_world
 
                 Student.Count++;
                 Console.WriteLine(Student.Count);
-               
+                
                 Console.WriteLine("y/n?");
                 if (Console.ReadLine() != "y") 
                 {
