@@ -25,7 +25,7 @@ namespace Hello_world
                 
                 Console.WriteLine("y/n?");
                 if (Console.ReadLine() != "y") 
-                {
+                { 
                     adding = false;
                 }
             }
