@@ -1,41 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Hello_world 
+namespace Hello_world
 {
-    class Program 
+    class Program
     {
         static void Main(string[] args)
         {
-            
-            var students = new List<Student>();
+            var memeber = new List<Member>();
+            var teacher = new Teacher();
+            var newmember = new Member();
+            var student = new Student();
+
             var adding = true;
             while (adding)
             {
-                var newStudent = new Student();
 
-                newStudent.Name = Question.Ask("Name: ");
-                newStudent.Grade = int.Parse(Question.Ask("Grade: "));               
-                newStudent.Phone = int.Parse(Question.Ask("Phonenr: "));
 
-                students.Add(newStudent);
+                Console.WriteLine(" t or s");
+                var q = Console.ReadLine();
+                if (q == "t")
+                {
 
-                Student.Count++;
-                Console.WriteLine(Student.Count);
-                
-                Console.WriteLine("y/n?");
-                if (Console.ReadLine() != "y") 
-                { 
-                    adding = false;
+                    teacher.Name = Question.Ask("Name: ");
+                    teacher.Subject = Question.Ask("Subject: ");
+                    teacher.Adresse = Question.Ask("Adresse: ");
+                    teacher.Phone = int.Parse(Question.Ask("Phone: "));
+                    memeber.Add(teacher);
+
+
                 }
-            }  
-            foreach (var student in students)
+                else if (q == "s")
+                {
+                    student.Name = Question.Ask("Name: ");
+                    student.Grade = int.Parse(Question.Ask("Grade: "));
+                    student.Adresse = Question.Ask("Adresse: ");
+                    student.Phone = int.Parse(Question.Ask("Phone: "));
+                    memeber.Add(student);
+                }
+            
+            Console.WriteLine("y/n?");
+            if (Console.ReadLine() != "y")
             {
-                Console.WriteLine(student.Name + " "+ student.Grade  );
+                adding = false;
             }
-        }     
+            }
+            foreach (var item in memeber)
+            {
+                Console.WriteLine(item.Name + " " + item.Adresse + " " + item.Phone.ToString()); ;
+            }
+        }
     }
 }
+
 
 
 

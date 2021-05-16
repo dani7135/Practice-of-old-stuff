@@ -4,7 +4,16 @@ using System.Text;
 
 namespace Hello_world
 {
-    class Teacher
+    class Teacher :Member
     {
+      
+        public string Subject;
+        public Teacher()
+        { }
+        public Teacher(string subject)
+        {
+            Subject = subject;
+        }
+
     }
 }
