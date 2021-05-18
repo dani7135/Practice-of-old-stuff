@@ -65,7 +65,7 @@ namespace Hello_world
             }
             Exports();
 
-        }
+        } 
         static void Exports()
         {
             foreach (var member in members)
