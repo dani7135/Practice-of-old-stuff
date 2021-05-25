@@ -7,7 +7,6 @@ namespace Hello_world
     interface IPay
     {
         void Pay();
-
     }
     public class PayRoll
     {
