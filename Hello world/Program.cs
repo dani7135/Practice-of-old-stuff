@@ -8,6 +8,8 @@ namespace Hello_world
         static List<Member> members= new List<Member>();
         static void Main(string[] args)
         {
+            PayRoll payRoll = new PayRoll();
+            payRoll.PayAll();
             var teacher = new Teacher();
             var student = new Student();
             var p = new Principal();

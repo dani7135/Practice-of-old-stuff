@@ -9,7 +9,20 @@ namespace Hello_world
         void Pay();
 
     }
-    class PayRoll
+    public class PayRoll
     {
+          List<IPay> pays = new List<IPay>();
+        public PayRoll() 
+        {
+            pays.Add(new Teacher());
+            pays.Add(new Principal());
+        }
+        public void PayAll()
+        {
+            foreach (var item in pays)
+            {
+                item.Pay();
+            }
+        }
     }
 }

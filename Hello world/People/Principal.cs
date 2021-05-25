@@ -8,6 +8,7 @@ namespace Hello_world
     {
         public void Pay()
         {
+            Console.WriteLine("Paying princial");
 
         }
     }
