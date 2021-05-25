@@ -8,8 +8,11 @@ namespace Hello_world
         static List<Member> members= new List<Member>();
         static void Main(string[] args)
         {
+            PayRoll payRoll = new PayRoll();
+            payRoll.PayAll();
             var teacher = new Teacher();
             var student = new Student();
+            var p = new Principal();
 
             var adding = true;
             while (adding)
@@ -61,11 +64,11 @@ namespace Hello_world
             
             foreach (var item in members)
             {
-                Console.WriteLine("Name: " + item.Name + " " + "Adresse: " + item.Adresse +" "+ "School number: " + item.School+ " " + "Phone: " + item.Phone.ToString()); ;
+                Console.WriteLine("Name: " + item.Name + " " + "Adresse: " + item.Adresse +" "+ "School: " + item.School+ " " + "Phone: " + item.Phone.ToString()); ;
             }
             Exports();
 
-        }
+        } 
         static void Exports()
         {
             foreach (var member in members)

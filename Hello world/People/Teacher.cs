@@ -4,9 +4,12 @@ using System.Text;
 
 namespace Hello_world
 {
-    class Teacher :Member
+    class Teacher : Member, IPay
     {
-      
+        public void Pay()
+        {
+            Console.WriteLine("Paying teacher");
+        }
         public string Subject;
         public Teacher()
         { }
